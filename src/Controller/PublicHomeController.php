@@ -15,4 +15,12 @@ class PublicHomeController extends AbstractController
             'controller_name' => 'PublicHomeController',
         ]);
     }
+
+    #[Route('/public/login', name: 'app_public_login')]
+    public function login(): Response
+    {
+        return $this->render('public_home/public.login.html.twig', [
+            'controller_name' => 'PublicHomeController',
+        ]);
+    }
 }
