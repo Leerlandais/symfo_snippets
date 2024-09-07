@@ -7,6 +7,6 @@ class CodeManager
     public function getCodeByType(string $type): string
     {
                 return 'type';
-        
+
     }
 }
