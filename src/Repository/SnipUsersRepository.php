@@ -2,18 +2,18 @@
 
 namespace App\Repository;
 
-use App\Entity\SnipUsers;
+use App\Entity\SnipUser;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<SnipUsers>
+ * @extends ServiceEntityRepository<SnipUser>
  */
 class SnipUsersRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, SnipUsers::class);
+        parent::__construct($registry, SnipUser::class);
     }
 
     //    /**

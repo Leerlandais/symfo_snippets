@@ -2,7 +2,9 @@
 
 namespace App\Manager;
 
-class CodeManager
+use App\Abstract\AbstractManager;
+
+class SnipCodeManager extends AbstractManager
 {
     public function getCodeByType(string $type): string
     {

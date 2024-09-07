@@ -7,7 +7,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: SnipUsersRepository::class)]
-class SnipUsers
+class SnipUser
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -29,8 +29,8 @@ class SnipUsers
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $user_recovery = null;
 
-    #[ORM\Column(type: Types::SMALLINT, options: ['default' => 0])]
-    private ?int $user_permissions = 0;
+    #[ORM\Column(type: Types::SMALLINT, options: ['default' => 1])]
+    private ?int $user_permissions = 1;
 
     public function getId(): ?int
     {
