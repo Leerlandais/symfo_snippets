@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\SnipHtmlRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: SnipHtmlRepository::class)]
@@ -19,8 +20,11 @@ class SnipHtml
     #[ORM\Column(length: 255)]
     private ?string $html_desc = null;
 
-    #[ORM\Column(length: 128)]
+    #[ORM\Column(length: 128, nullable: true)]
     private ?string $html_img = null;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $html_code = null;
 
     public function getId(): ?int
     {
@@ -59,6 +63,30 @@ class SnipHtml
     public function setHtmlImg(string $html_img): static
     {
         $this->html_img = $html_img;
+
+        return $this;
+    }
+
+    public function getHtmlCode(): ?string
+    {
+        return $this->html_code;
+    }
+
+    public function setHtmlCode(string $html_code): static
+    {
+        $this->html_code = $html_code;
+
+        return $this;
+    }
+
+    public function getTest(): ?string
+    {
+        return $this->test;
+    }
+
+    public function setTest(?string $test): static
+    {
+        $this->test = $test;
 
         return $this;
     }
